@@ -1,0 +1,65 @@
+{
+	"invoices": [
+		{
+			"id": "INV-000111",
+			"invoice_date": "01-10-2024",
+			"pay_term": 60,
+			"tax_rate": 18.6,
+			"currency": "USD",
+			"IBAN": "GB74BARC20199043573300",
+			"customer": {
+				"name": "Inotech",
+				"address": "Paradise Land",
+				"city": "Libreville",
+				"state": "unknown",
+				"country": "France",
+				"tax_code": "FR1234567890"
+			},
+			"items": [
+				{
+					"id": "1",
+					"description": "monthly support",
+					"quantity": 20,
+					"price": 700
+				},
+				{
+					"id": "2",
+					"description": "on call alerts",
+					"quantity": 12,
+					"price": 50
+				}
+			]
+		},
+		{
+			"id": "INV-000112",
+			"invoice_date": "01-10-2024",
+			"tax_rate": 18.6,
+			"pay_term": 90,
+			"currency": "EUR",
+			"IBAN": "GB74BARC20199043573300",
+			"customer": {
+				"name": "Inotech",
+				"address": "Paradise Land",
+				"city": "Libreville",
+				"state": "unknown",
+				"country": "France",
+				"tax_code": "FR1234567890"
+			},
+			"notes": "Please refer to timesheet",
+			"items": [
+				{
+					"id": "1",
+					"description": "monthly support",
+					"quantity": 20,
+					"price": 700
+				},
+				{
+					"id": "2",
+					"description": "on call alerts",
+					"quantity": 12,
+					"price": 50
+				}
+			]
+		}
+	]
+}
