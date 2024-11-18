@@ -13,7 +13,7 @@ def format_currency_amount(value, currency="USD"):
 def generate (payload):
     environment = Environment(loader=FileSystemLoader("resources/templates/"))
     environment.filters["format_currency"] = format_currency_amount
-    invoice_zoho_template = environment.get_template("invoice.html")
+    invoice_template = environment.get_template("invoice.html")
     footer_template = environment.get_template("footer.html")
 
     invoice_generate_options = {
@@ -28,7 +28,6 @@ def generate (payload):
         'no-outline': None
     }
 
-    print('make directory')
     os.makedirs(os.path.join("resources", "out"), exist_ok=True)
     os.makedirs(os.path.join("resources", "pdf"), exist_ok=True)
 
@@ -47,7 +46,7 @@ def generate (payload):
                 **invoice, 
                 "invoice_due_date": invoice_due_date 
             }
-            results.write(invoice_zoho_template.render(invoice_data))
+            results.write(invoice_template.render(invoice_data))
 
         pdf_filename = f"resources/pdf/{invoice_filename}.pdf"
         pdfkit.from_file(html_filename, pdf_filename, options=invoice_generate_options)
